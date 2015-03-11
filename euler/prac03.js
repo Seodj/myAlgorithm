@@ -5,3 +5,31 @@
 	600851475143의 소인수 중에서 가장 큰 수를 구하세요.
 */
 
+console.log(getPrimeFactor(600851475143));
+
+function getPrimeFactor(number){
+	var maxValue = 0;
+	if(number <= 2){
+		return number;
+	}
+
+	for(var index = 2; index <= number ; index++){
+		if( index == number ) {
+			maxValue = findMaxValue(index, maxValue);
+			return maxValue;
+		}
+		if( (number%index) == 0 ) {
+			number = number/index;
+			maxValue = findMaxValue(index, maxValue);
+			index = 2;
+			continue;
+		}
+	}
+}
+
+function findMaxValue(index, maxValue){
+	if(index > maxValue ) {
+		maxValue = index;
+	}
+	return maxValue;
+}
