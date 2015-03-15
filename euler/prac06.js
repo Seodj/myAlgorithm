@@ -11,3 +11,17 @@
 
 그러면 1부터 100까지 자연수에 대해 "합의 제곱"과 "제곱의 합"의 차이는 얼마입니까?
 */
+console.log(findValue(20));
+
+function findValue(maxValue){
+	var jegobsum = 0;
+	var sumjegob = 0;
+
+	for(var index = 1; index <= maxValue ; index ++){
+		jegobsum += index * index;
+		sumjegob += index;
+	}
+	sumjegob *= sumjegob;
+
+	return sumjegob - jegobsum;
+}
