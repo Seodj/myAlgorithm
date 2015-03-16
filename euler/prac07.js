@@ -6,7 +6,7 @@
 
 console.log(insertNumber(10001));
 
-function isPrime(value){
+function isPrimeNumber(value){
 	for(var index = 2 ; index < value; index++){
 		if(value % index == 0){
 			return false;
@@ -18,7 +18,7 @@ function isPrime(value){
 function insertNumber(number){
 	var count = 1;
 	for(var index = 2 ; count <= number ; index++){
-		if(isPrime(index)){
+		if(isPrimeNumber(index)){
 			if(count == number){
 				return index;
 			}
