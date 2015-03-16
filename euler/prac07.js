@@ -23,7 +23,6 @@ function insertNumber(number){
 				return index;
 			}
 			count++;
-			continue;
 		}
 	}
 }
