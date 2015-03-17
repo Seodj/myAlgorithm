@@ -53,6 +53,7 @@ console.log(findMaxValue(number));
 
 function findMaxValue(number){
 	var max = 0;
+	
 	for(var index = 0 ; index <= number.length - 4 ; index++){
 		var result = number.charAt(index) * number.charAt(index + 1) * 
 		number.charAt(index + 2) * number.charAt(index + 3) *
