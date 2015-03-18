@@ -4,3 +4,25 @@
 
 a + b + c = 1000  인 피타고라스 수 a, b, c는 한 가지 뿐입니다. 이 때, a × b × c 는 얼마입니까?
 */
+
+console.log(findMatchValue(1000));
+
+function findPythagoras(a,b,c){
+	if(a * a + b * b == c * c){
+		return true;
+	}
+	return false;
+}
+function findMatchValue(number){
+	for(var index1 = 1; index1 <= number ; index1++){
+		for(var index2 = 1; index2 <= number ; index2++){
+			for(var index3 = 1; index3 <= number ; index3++){
+				if(index1 + index2 + index3 == number){
+					if(findPythagoras(index1,index2,index3)){
+						return index1 * index2 * index3;
+					}
+				}
+			}
+		}
+	}
+}
