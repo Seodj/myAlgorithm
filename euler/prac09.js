@@ -13,6 +13,7 @@ function findPythagoras(a,b,c){
 	}
 	return false;
 }
+
 function findMatchValue(number){
 	for(var index1 = 1; index1 <= number ; index1++){
 		for(var index2 = 1; index2 <= number ; index2++){
