@@ -3,17 +3,15 @@
 
 이백만(2,000,000) 이하 소수의 합은 얼마입니까?
 */
+var divideNumber = new Array();
+divideNumber.push(2);
 
-console.log(addPrimeNumber(2000000));
+console.log(addPrimeNumber(2000000)+2);
 
 function addPrimeNumber(number){
-	var sum = 17;
+	var sum = 0;
 	for(var index = 2 ; index < number ; index++){
-		if(index%2==0 || index%3==0 || index%5==0 || index%7==0){ 
-			console.log('pass');
-			 continue;
-		}
-		else if(isPrimeNumber(index)){
+		if(isPrimeNumber(index)){
 			sum += index;
 		}
 	}
@@ -21,13 +19,11 @@ function addPrimeNumber(number){
 }
 
 function isPrimeNumber(value){
-	var divideNumber = 2;
-	while(value % divideNumber != 0){ 
-		console.log(value);
-		divideNumber++;
+	for(var index = 0 ; index < divideNumber.length; index++){
+		if(value % divideNumber[index] == 0){
+			return false;
+		}
 	}
-	if(divideNumber == value){
-		return true;
-	}
-	return false;
+	divideNumber.push(value);
+	return true;
 }
