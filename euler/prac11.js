@@ -51,9 +51,9 @@ var text = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 "
 var number = text.split(" ");
 var max = 0;
 
-findDiagonalMaxValue();
-findHorizonMaxValue();
 findVerticalMaxValue();
+findHorizonMaxValue();
+findDiagonalMaxValue();
 
 console.log(max);
 
@@ -61,7 +61,7 @@ function findDiagonalMaxValue(){
 	var maxIndex = 336;
 	var result;
 	for(var index = 0 ; index <= maxIndex ; index ++){
-		if(isAble(index)){
+		if(isRightAble(index)){
 			result = number[index] * number[index+21] * number[index+42] * number[index+63];
 			if(result > max){
 				max = result;
@@ -73,8 +73,14 @@ function findDiagonalMaxValue(){
 function findHorizonMaxValue(){
 	var maxIndex = 399;
 	for(var index = 0 ; index <= maxIndex ; index ++){
-		if(isAble(index)){
+		if(isRightAble(index)){
 			result = number[index] * number[index+1] * number[index+2] * number[index+3];
+			if(result > max){
+				max = result;
+			}
+		}
+		if(isLeftAble(index)){
+			result = number[index] * number[index+19] * number[index+38] * number[index+57];
 			if(result > max){
 				max = result;
 			}
@@ -91,9 +97,18 @@ function findVerticalMaxValue(){
 		}
 	}
 }
-function isAble(number){
+
+function isRightAble(number){
 	var indexNumber = number % 20;
 	if( indexNumber == 17 || indexNumber == 18 || indexNumber == 19){
+		return false;
+	}
+	return true;
+}
+
+function isLeftAble(number){
+	var indexNumber = number % 20;
+	if( indexNumber == 0 || indexNumber == 1 || indexNumber == 2){
 		return false;
 	}
 	return true;
