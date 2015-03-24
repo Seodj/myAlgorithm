@@ -15,3 +15,31 @@ n → 3 n + 1 (n이 홀수일 때)
 
 참고: 계산 과정 도중에는 숫자가 백만을 넘어가도 괜찮습니다.
 */
+var max = 0;
+console.log(findMax(1000000));
+
+function findMax(maxIndex){
+	var result;
+	var maxValue;
+	for(var index = 2 ; index <= maxIndex; index++){
+		result = collatz(index);
+		if(result > max){
+			max = result;
+			maxValue = index;
+		}
+	}
+	return maxValue;
+}
+
+function collatz(number){
+	var index = 1;
+	while(number!=1){
+		if(number % 2 == 0){
+			number /= 2;
+		} else{
+			number = 3 * number + 1;
+		}
+		index++;
+	}
+	return index;
+}
