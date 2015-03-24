@@ -20,14 +20,17 @@
 그러면 500개 이상의 약수를 갖는 가장 작은 삼각수는 얼마입니까?
 */
 
-console.log(makeTriangleNumber(200));
+console.log(makeTriangleNumber(500));
 
 function makeTriangleNumber(targetCount){
 	var isFinish = false;
 	var sum = 0;
 	for(var index = 1; isFinish == false; index++){
 		sum += index;
-		if(countDivideNumber(sum) >= targetCount){
+		if(sum % 2 != 0){
+			continue;
+		}
+		else if(countDivideNumber(sum) >= targetCount){
 			isFinish = true;
 		}
 	}
