@@ -38,11 +38,19 @@ function makeTriangleNumber(targetCount){
 }
 
 function countDivideNumber(number){
-	var count = 0;
-	for(var index = 1; index <= number ; index++){
-		if(number % index == 0 ){
+	var result = 1;
+	var count = 1;
+	var divideNumber = 2;
+	while(number!=1){
+		if(number%divideNumber==0){
+			number = number/divideNumber;
 			count++;
+		}else{
+			divideNumber++;
+			result *= count;
+			count = 1;
 		}
 	}
-	return count;
+	result *= count;
+	return result;
 }
