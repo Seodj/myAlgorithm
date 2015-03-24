@@ -10,3 +10,21 @@
 
 그러면 20 × 20 격자에는 모두 몇 개의 경로가 있습니까?
 */
+console.log(MoveLeftToRight(20));
+
+function MoveLeftToRight(length){
+	length += 1;
+	var gukja = new Array(length);
+	for(var index = 0; index < length ; index++){
+		gukja[index] = new Array(length);
+		gukja[0][index] = 1;
+		gukja[index][0] = 1;
+	}
+
+	for(var index = 1; index < length ; index++){
+		for(var index2 = 1; index2 < length ; index2++){
+			gukja[index][index2] = gukja[index-1][index2] + gukja[index][index2-1];
+		}
+	}
+	return gukja[20][20];
+}
