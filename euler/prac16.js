@@ -6,7 +6,14 @@
 
 var squareResult = ['1'];
 
-console.log(addResult(1000, 2));
+console.log(addResult(repetitonSqare(1000, 2)));
+
+function repetitonSqare(squareIndex, squareNumber){
+	for(var index = 1; index <= squareIndex ; index++){
+		squareResult = square(squareResult, squareNumber);
+	}
+	return squareResult;
+}
 
 // js에 존재하는 자료형으로 결과를 담을 수 없으므로, 배열로 만들어 한 자리씩 2를 곱한다.
 function square(squareResult, squareNumber){
@@ -28,11 +35,8 @@ function square(squareResult, squareNumber){
 	return result;
 }
 
-function addResult(squareIndex, squareNumber){
+function addResult(squareIndex){
 	var sum = 0;
-	for(var index = 1; index <= squareIndex ; index++){
-		squareResult = square(squareResult, squareNumber);
-	}
 
 	for(var index = 0; index < squareResult.length; index++){
 		sum += squareResult[index];
