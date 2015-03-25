@@ -8,7 +8,7 @@ var squareResult = ['1'];
 
 console.log(addResult(1000, 2));
 
-// js에 존재하는 자료형으로 결과를 담을 수 없으므로, 배열로 한 요소씩 2를 곱하였습니다.
+// js에 존재하는 자료형으로 결과를 담을 수 없으므로, 배열로 만들어 한 자리씩 2를 곱한다.
 function square(squareResult, squareNumber){
 	var result = [];
 	var carry = 0;
