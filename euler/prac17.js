@@ -8,24 +8,6 @@
    예를 들어 342를 영어로 쓰면 three hundred and forty-two 가 되어서 23 글자,
    115 = one hundred and fifteen 의 경우에는 20 글자가 됩니다.
 */
-// 1 ~ 19 다 다름.
-// 20 ~ 99 까지 공통점
-// 100 ~ 999 까지 공통점
-// eleven
-// twelve
-// thirteen
-// fourteen
-// fifteen
-// sixteen
-// seventeen
-// eighteen
-// nineteen
-// twenty
-// thirty
-// forty
-// fifty
-// sixty
-// seventy
 
 var result = "";
 
@@ -34,12 +16,17 @@ function entryPoint(maxValue){
 	var sum = 0;
 	for(var index = 1; index <= maxValue; index++){
 		var number = index;
+		if(number == 1000){
+				result += "onethousand";
+				continue;
+		}
 		if(number >= 100){
-			result += overHundred(parseInt(number/100));
+			result += underTwenty(parseInt(number/100)) + "hundred";
 			number = parseInt(number%100);
 			if(number == 0){
 				continue;
 			}
+			result += "and";
 		}
 		if(number >= 20){
 			result += overTwenty(parseInt(number/10));
@@ -48,27 +35,10 @@ function entryPoint(maxValue){
 		if(number >= 1){
 			result += underTwenty(number);
 		}
-		sum += countDigit(result);
 	}
+	sum = countDigit(result);
 
 	return sum;
-}
-
-function overHundred(number){
-	var hundredDigit;
-	switch(number){
-		case 1: hundredDigit = "one"; break;
-		case 2: hundredDigit = "two"; break;
-		case 3: hundredDigit = "three"; break;
-		case 4: hundredDigit = "four"; break;
-		case 5: hundredDigit = "five"; break;
-		case 6: hundredDigit = "six"; break;
-		case 7: hundredDigit = "seven"; break;
-		case 8: hundredDigit = "eight"; break;
-		case 9: hundredDigit = "nine"; break;
-		case 10: return "onethousand"; break;
-	}
-	return hundredDigit+"hundred";
 }
 
 function overTwenty(number){
@@ -81,7 +51,7 @@ function overTwenty(number){
 		case 6: tenDigit = "sixty"; break;
 		case 7: tenDigit = "seventy"; break;
 		case 8: tenDigit = "eighty"; break;
-		case 9: tenDigit = "twenty"; break;
+		case 9: tenDigit = "ninety"; break;
 	}
 
 	return tenDigit;
@@ -108,7 +78,7 @@ function underTwenty(number){
 		case 16: unitDigit = "sixteen"; break;
 		case 17: unitDigit = "seventeen"; break;
 		case 18: unitDigit = "eighteen"; break;
-		case 19: unitDigit = "ninety"; break;
+		case 19: unitDigit = "nineteen"; break;
 	}
 
 	return unitDigit;
