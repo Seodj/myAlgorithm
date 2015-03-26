@@ -14,7 +14,6 @@ var result = "";
 console.log(entryPoint(1000));
 
 function entryPoint(maxIndex){
-	var sum = 0;
 	for(var index = 1; index <= maxIndex; index++){
 		var number = index;
 		if(number == 1000){
@@ -37,9 +36,7 @@ function entryPoint(maxIndex){
 			result += underTwenty(number);
 		}
 	}
-	sum = countDigit(result);
-
-	return sum;
+	return countDigit(result);
 }
 
 function overTwenty(number){
@@ -54,7 +51,6 @@ function overTwenty(number){
 		case 8: tenDigit = "eighty"; break;
 		case 9: tenDigit = "ninety"; break;
 	}
-
 	return tenDigit;
 }
 
@@ -81,7 +77,6 @@ function underTwenty(number){
 		case 18: unitDigit = "eighteen"; break;
 		case 19: unitDigit = "nineteen"; break;
 	}
-
 	return unitDigit;
 }
 
