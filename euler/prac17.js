@@ -12,9 +12,10 @@
 var result = "";
 
 console.log(entryPoint(1000));
-function entryPoint(maxValue){
+
+function entryPoint(maxIndex){
 	var sum = 0;
-	for(var index = 1; index <= maxValue; index++){
+	for(var index = 1; index <= maxIndex; index++){
 		var number = index;
 		if(number == 1000){
 				result += "onethousand";
