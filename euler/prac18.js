@@ -44,22 +44,21 @@ var triangle = "75 "
 			+ "04 62 98 27 23 09 70 98 73 93 38 53 60 04 23";
 
 var number = triangle.split(" ");
-var num = 0;
 var triArray = new Array();
-var height;
-var temp = 1;
-for(var index = 2 ; ; index++){
-	temp += index;
-	if(temp == number.length){
-		height = index;
-		break;
-	}
-}
 
 console.log(findMaxValue(sumValue()));
 
 function sumValue(){
 	var sum = new Array();
+	var height;
+	var temp = 1;
+	for(var index = 2 ; ; index++){
+		temp += index;
+		if(temp == number.length){
+			height = index;
+			break;
+		}
+	}
 	for(var index = 0; index < height ; index++){
 		triArray[index] = new Array();
 		for(var index2 = 0 ; index2 < index + 1 ; index2++){
@@ -84,7 +83,6 @@ function sumValue(){
 			}
 		}
 	}
-	console.log(sum);
 	return sum;
 }
 
