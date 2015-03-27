@@ -44,36 +44,56 @@ var triangle = "75 "
 			+ "04 62 98 27 23 09 70 98 73 93 38 53 60 04 23";
 
 var number = triangle.split(" ");
-var height = 13;
 var num = 0;
 var triArray = new Array();
-
-for(var index = 0; index < height ; index++){
-	triArray[index] = [];
-	for(var index2 = 0 ; index2 < index + 1 ; index2++){
-		triArray[index][index2] = number[num];
-		num++;
+var height;
+var temp = 1;
+for(var index = 2 ; ; index++){
+	temp += index;
+	if(temp == number.length){
+		height = index;
+		break;
 	}
 }
 
-findMaxValue();
+console.log(findMaxValue(sumValue()));
 
-function findMaxValue(){
+function sumValue(){
 	var sum = new Array();
-	var temp = 1;
-	var height;
-	for(var index = 2 ; temp <= number.length; index++){
-		temp += index;
-		height = index;
+	for(var index = 0; index < height ; index++){
+		triArray[index] = new Array();
+		for(var index2 = 0 ; index2 < index + 1 ; index2++){
+			triArray[index][index2] = number[num];
+			num++;
+		}
 	}
+
 	sum[0] = new Array();
 	sum[0][0] = triArray[0][0];
 
-	for(var index = 1; index <= height; index++){
+	for(var index = 1; index < height; index++){
 		sum[index] = new Array();
-		sum[index][0] = sum[index-1][0] + triArray[index][0];
-		sum[index][index] = sum[index-1][index-1] + triArray[index][index];
-	}
+		sum[index][0] = parseInt(sum[index-1][0]) + parseInt(triArray[index][0]);
+		sum[index][index] = parseInt(sum[index-1][index-1]) + parseInt(triArray[index][index]);
 
+		for(var index2 = 1; index2 < index ; index2++){
+			if(parseInt(sum[index-1][index2-1]) > parseInt(sum[index-1][index2])){
+				sum[index][index2] = parseInt(sum[index-1][index2-1]) + parseInt(triArray[index][index2]);
+			} else{
+				sum[index][index2] = parseInt(sum[index-1][index2]) + parseInt(triArray[index][index2]);
+			}
+		}
+	}
 	console.log(sum);
+	return sum;
+}
+
+function findMaxValue(sum){
+	var max = 0;
+	for(var index = 0; index <= height ; index++){
+		if(sum[height-1][index] > max){
+			max = sum[height-1][index];
+		}
+	}
+	return max;
 }
