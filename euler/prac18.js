@@ -44,9 +44,36 @@ var triangle = "75 "
 			+ "04 62 98 27 23 09 70 98 73 93 38 53 60 04 23";
 
 var number = triangle.split(" ");
+var height = 13;
+var num = 0;
+var triArray = new Array();
 
+for(var index = 0; index < height ; index++){
+	triArray[index] = [];
+	for(var index2 = 0 ; index2 < index + 1 ; index2++){
+		triArray[index][index2] = number[num];
+		num++;
+	}
+}
 
+findMaxValue();
 
 function findMaxValue(){
+	var sum = new Array();
+	var temp = 1;
+	var height;
+	for(var index = 2 ; temp <= number.length; index++){
+		temp += index;
+		height = index;
+	}
+	sum[0] = new Array();
+	sum[0][0] = triArray[0][0];
 
+	for(var index = 1; index <= height; index++){
+		sum[index] = new Array();
+		sum[index][0] = sum[index-1][0] + triArray[index][0];
+		sum[index][index] = sum[index-1][index-1] + triArray[index][index];
+	}
+
+	console.log(sum);
 }
