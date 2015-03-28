@@ -8,7 +8,7 @@
 20세기 (1901년 1월 1일 ~ 2000년 12월 31일) 에서, 매월 1일이 일요일인 경우는 총 몇 번입니까?
 */
 
-console.log(confirmDate(2000,2));
+console.log(entryPoint(1901,2000));
 
 function confirmDate(year, month){
 	var date;
@@ -27,7 +27,15 @@ function confirmDate(year, month){
 				date = 28; break;
 			}
 			break;
+		default: date = 31; break;
 	}
 
 	return date;
+}
+
+function isSunday(date){
+	if(date % 7 ==1){
+		return true;
+	}
+	return false;
 }
