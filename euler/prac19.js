@@ -10,6 +10,22 @@
 
 console.log(entryPoint(1901,2000));
 
+function entryPoint(startYear, endYear){
+	var sum = 1;
+	var total = 1;
+	var date;
+	for(var year = startYear; year <= endYear ; year++){
+		for(var month = 1; month <= 12 ; month++){
+			date = confirmDate(year, month);
+			total += date;
+			if(isSunday(total)){
+				sum++;
+			}
+		}
+	}
+	return sum;
+}
+
 function confirmDate(year, month){
 	var date;
 
