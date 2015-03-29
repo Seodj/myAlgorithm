@@ -6,3 +6,9 @@ n! 이라는 표기법은 n × (n − 1) × ... × 3 × 2 × 1을 뜻합니다.
 
 100! 의 자리수를 모두 더하면 얼마입니까?
 */
+
+function factorial(maxIndex){
+	for(var index = 1 ; index <= maxIndex; index++){
+		
+	}
+}
