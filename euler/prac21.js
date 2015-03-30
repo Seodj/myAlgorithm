@@ -15,7 +15,6 @@ console.log(gop());
 function gop(){
 	var result = 0;
 	var sum;
-	var temp;
 	for(var index = 1; index <= 10000 ; index++){
 		sum = sumDivideNumber(index);
 		if(index == sumDivideNumber(sum)){
