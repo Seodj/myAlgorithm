@@ -10,15 +10,14 @@ a, b는 친화쌍이라 하고 a와 b를 각각 친화수(우애수)라고 합�
 10000 이하의 친화수들을 모두 찾아서 그 합을 구하세요.
 */
 
-console.log(entryPoint()); 
+console.log(entryPoint(10000)); 
 
-function entryPoint(){
+function entryPoint(maxIndex){
 	var result = 0;
 	var sum;
-	for(var index = 1; index <= 10000 ; index++){
+	for(var index = 1; index <= maxIndex ; index++){
 		sum = sumDivideNumber(index);
 		if(index == sumDivideNumber(sum)){
-			console.log(sum + " " + index);
 			if(index == sum){
 				continue;
 			}
