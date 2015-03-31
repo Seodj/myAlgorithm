@@ -16,9 +16,12 @@ names.sort();
 console.log(entryPoint());
 
 function entryPoint(){
-	
+	var result = 0;
+	for(var index = 0 ; index < names.length ; index++){
+		result = result + addCharNumber(names[index]) * (index + 1);
+	}
+	return result;
 }
-
 
 function addCharNumber(name){
 	var sum = 0;
