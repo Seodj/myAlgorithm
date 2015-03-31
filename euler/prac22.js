@@ -19,6 +19,7 @@ function entryPoint(){
 	
 }
 
+
 function addCharNumber(name){
 	var sum = 0;
 	var upperToLower = 64;
