@@ -11,7 +11,7 @@
 
 그렇다면, 초과수 두 개의 합으로 나타낼 수 없는 모든 양의 정수의 합은 얼마입니까?
 */
-console.log();
+console.log(entryPoint(28123));
 
 function entryPoint(maxIndex){
 	var result = 0;
