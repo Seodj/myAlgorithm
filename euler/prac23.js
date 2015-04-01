@@ -28,3 +28,24 @@ function isOverNumber(number){
 	}
 }
 
+function overNumberSum(overNumber, maxIndex){
+	var sum = 0;
+	var result = [];
+	for(var index = 0; index < overNumber.length ; index++){
+		for(var index2 = 0; index2 < overNumber.length ; index2++){
+			var isValid = false;
+			a = overNumber[index] + overNumber[index2];
+			if(a < maxIndex){
+				result[a] = 1;
+			}
+		}
+	}
+
+	for(var index = 0; index < result.length ; index++){
+		if(result[index] == 1){
+			sum += index;
+		}
+	}
+
+	return sum;
+}
