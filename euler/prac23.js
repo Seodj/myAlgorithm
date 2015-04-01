@@ -13,6 +13,20 @@
 */
 console.log();
 
+function entryPoint(maxIndex){
+	var result = 0;
+	var overNumber = [];
+	var cnt = 0;
+	for(var index = 1; index < maxIndex ; index++){
+		if(isOverNumber(index)){
+			overNumber[cnt++] = index;
+		}
+		result += index;
+	}
+
+	return result - overNumberSum(overNumber,maxIndex);
+}
+
 function isOverNumber(number){
 	var sum = 0;
 	for(var index = 1; index < number ; index++){
