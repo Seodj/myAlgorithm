@@ -14,7 +14,28 @@
 console.log(entryPoint(1000000));
 
 function entryPoint(target){
+    target -= 1;
+    var array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var result = [];
+    var factorialNumber = 9;
+    var divideNumber = [];
+    var index = 0;
+    while(target >= 0){
+        var factorialResult = factorial(factorialNumber);
+        divideNumber[index] = parseInt(target / factorialResult);
+        if(target == 0 ) break;
+        target = target % factorialResult;
+        index++;
+        factorialNumber--;
+    }
+
+    for(var index = 0; index < divideNumber.length ; index++){
+        result[index] = array[divideNumber[index]];
+        array.splice(divideNumber[index],1);
     
+    }
+
+    return result;
 }
 
 function factorial(maxIndex){
