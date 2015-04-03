@@ -27,6 +27,8 @@ function entryPoint(){
 
 }
 
-function fibonazzi(){
+function fibonazzi(target){
+	var sum = fibonazzi(target - 1) + fibonazzi(target - 2);
 
+	return sum;
 }
