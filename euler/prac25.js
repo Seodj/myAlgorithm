@@ -23,27 +23,22 @@ F1 = 1
 피보나치 수열에서 값이 처음으로 1000자리가 되는 것은 몇번째 항입니까?
 */
 
-// console.log(entryPoint());
-	var before = [8];
-	var after = [3,1];
-	console.log(fibonazzi(before,after));
-
+console.log(entryPoint());
 
 function entryPoint(){
 	var index = 1;
 	var before = [0];
 	var after = [1];
 	var length = 0;
-	while(index < 10){
+	while(length < 1000){
 		var temp = after;
-		console.log("before " + before + " after " + after);
 		after = fibonazzi(before, after);
 		before = temp;
 		length = after.length;
 		index++;
 	}
 
-	return before;
+	return index;
 }
 
 function fibonazzi(before, after){
