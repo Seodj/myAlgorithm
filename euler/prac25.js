@@ -24,5 +24,9 @@ F1 = 1
 */
 
 function entryPoint(){
-	
+
+}
+
+function fibonazzi(){
+
 }
