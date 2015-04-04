@@ -20,3 +20,18 @@
 d 를 1000 이하의 정수라고 할 때, 
 단위분수 1/d 의 순환마디가 가장 긴 수는 무엇입니까?
 */
+
+console.log(isRotationNumber(7));
+
+function countRotation(number){
+	var result = 1/number;
+	console.log(result);
+}
+
+function isRotationNumber(number){
+	var temp = 1 / number;
+	
+	console.log((""+temp).length);
+
+	return true;
+}
