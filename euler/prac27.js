@@ -24,6 +24,10 @@ n^2 + an + b    (단 | a | < 1000, | b | < 1000)
 
 console.log(insertNumber(1000));
 
+function entryPoint(){
+	
+}
+
 function isPrimeNumber(value){
 	for(var index = 2 ; index < value; index++){
 		if(value % index == 0){
