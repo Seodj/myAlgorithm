@@ -23,6 +23,10 @@ d 를 1000 이하의 정수라고 할 때,
 
 console.log(isRotationNumber(7));
 
+function entryPoint(){
+	
+}
+
 function countRotation(number){
 	var result = 1/number;
 	console.log(result);
