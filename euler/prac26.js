@@ -21,21 +21,32 @@ d 를 1000 이하의 정수라고 할 때,
 단위분수 1/d 의 순환마디가 가장 긴 수는 무엇입니까?
 */
 
-console.log(isRotationNumber(7));
+console.log(entryPoint(1000));
 
-function entryPoint(){
-	
-}
+function entryPoint(number){   
+    var maxCycle = 0;          
+    var maxIndex = 0;          
+       
+    for(var index=2; index < number; index++){   
+        var temp = numCirculating(index); 
+        if(temp > maxCycle){           
+            maxCycle = temp;   
+            maxIndex = index;   
+        }   
+    }   
+    return maxIndex;   
+} 
 
-function countRotation(number){
-	var result = 1/number;
-	console.log(result);
-}
-
-function isRotationNumber(number){
-	var temp = 1 / number;
-	
-	console.log((""+temp).length);
-
-	return true;
-}
+function numCirculating(d){   
+    var remain_list = new Array();      //나머지값들을 넣을 list   
+    var remain = remain_list[0] = 1;    //초기값 설정.   
+    do{   
+        remain = remain * 10 % d;       //나머지 값.   
+        for(var i=0; i<remain_list.length; i++) //나머지 값이 list에 있는지 확인.   
+            if(remain_list[i] == remain)   
+                return remain_list.length - i;  //있다면 return.   
+        remain_list[remain_list.length] = remain;   
+    }while(remain != 0);            //나머지가 0이면 나누어 떨어졌으므로 순환이 없음.   
+    return 0;   
+}   
+/* 한계값 l 이전의 수 d에 대해 1/d의 순환마디가 가장 긴 d 값. */    
