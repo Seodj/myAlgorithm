@@ -47,6 +47,7 @@ function numCirculating(d){
                 return remain_list.length - i;  //있다면 return.   
         remain_list[remain_list.length] = remain;   
     }while(remain != 0);            //나머지가 0이면 나누어 떨어졌으므로 순환이 없음.   
+    
     return 0;   
 }   
 /* 한계값 l 이전의 수 d에 대해 1/d의 순환마디가 가장 긴 d 값. */    
