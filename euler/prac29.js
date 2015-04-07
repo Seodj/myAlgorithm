@@ -16,3 +16,7 @@
 function entryPoint(){
 
 }
+
+function countNumber(){
+	
+}
