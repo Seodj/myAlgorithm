@@ -11,11 +11,28 @@
 
 같은 방식으로 1001×1001 행렬을 만들었을 때, 대각선상의 숫자를 더하면 얼마가 됩니까?
 */
+console.log(entryPoint(1001));
 
-function entryPoint(){
-
+function entryPoint(matrix){
+	return sumDiagonal(matrix);
 }
 
-function sumDiagonal(){
-	
+function sumDiagonal(matrix){
+	var sum = 0;
+	var centerNumber = 1;
+	var leftUpNumber = centerNumber;
+	var rightUpNumber = centerNumber;
+	var leftDownNumber = centerNumber;
+	var rightDownNumber = centerNumber;
+	for(var index = 3 ; index <= matrix ; index += 2){
+		leftUpNumber += 4 * index - 6;
+		rightUpNumber += 4 * index - 4;
+		leftDownNumber += 4 * index - 8;
+		rightDownNumber += 4 * index - 10;
+
+		sum += leftUpNumber + rightUpNumber + leftDownNumber + rightDownNumber;
+	}
+	sum += centerNumber;
+
+	return sum;
 }
