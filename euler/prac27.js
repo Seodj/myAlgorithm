@@ -22,29 +22,43 @@ n^2 + an + b    (단 | a | < 1000, | b | < 1000)
 // n(n+a) + b
 // 1000보다 작은 가장 큰 소수 b , a = b-1
 
-console.log(insertNumber(1000));
+console.log(entryPoint());
 
 function entryPoint(){
+	var max = 0;
+	for(var a = -999; a < 1000; a++){
+		for(var b = 1; b < 1000; b++){
+			if(isPrimeNumber(a) && isPrimeNumber(a+b+1) && (100 * 100 + 100 * a + b) > 0){
+				var primeNumber;
+				var result;
+				if(a > 0){
+					if(b<0) primeNumber = b*-1 - 1;
+					else primeNumber = b - 1;
+				}
+				if(a < 0){
+					primeNumber = a*-1 + 1;
+				}
+				if(primeNumber > max){
+					max = primeNumber;
+					console.log(a + " " + b);
+					result = a * b;
+
+				}
+			}
+		}
+	}
+	return result;
 	
 }
 
 function isPrimeNumber(value){
+	if(value < 0){
+		value *= -1;
+	}
 	for(var index = 2 ; index < value; index++){
 		if(value % index == 0){
 			return false;
 		}
 	}
 	return true;
-}
-
-function insertNumber(number){
-	var max = 0;
-	for(var index = 2 ; index <= number ; index++){
-		if(isPrimeNumber(index)){
-			if(index > max){
-				max = index;
-			}
-		}
-	}
-	return max;
 }
