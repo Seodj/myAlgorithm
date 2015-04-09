@@ -17,7 +17,6 @@ console.log(entryPoint(100));
 
 function entryPoint(maxIndex){
 	var result = new Array();
-	var count = 0;
 	for(var a = 2; a <= maxIndex ; a++){
 		for(var b = 2; b <= maxIndex; b++){
 			var combination = 1;
@@ -26,9 +25,8 @@ function entryPoint(maxIndex){
 			}
 			if(result.indexOf(combination) < 0){
 				result.push(combination);
-				count++;
 			}
 		}
 	}
-	return count;
+	return result.length;
 }
