@@ -32,7 +32,3 @@ function entryPoint(maxIndex){
 	}
 	return count;
 }
-
-function countNumber(){
-	
-}
