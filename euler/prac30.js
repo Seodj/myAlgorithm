@@ -15,6 +15,6 @@
 */
  
  function entryPoint(){
-
+ 	var array = new Array();
 
  }
