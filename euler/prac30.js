@@ -18,5 +18,5 @@ console.log(entryPoint());
 function entryPoint(){
  	var array = new Array();
 
-
+ 	return array;
 }
