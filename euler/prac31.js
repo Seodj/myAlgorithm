@@ -10,6 +10,8 @@
 2파운드를 만드는 서로 다른 방법은 모두 몇가지나 있습니까?
 */
 
+console.log(divideMoney(300));
+
 function entryPoint(money){
 	
 }
@@ -17,36 +19,37 @@ function entryPoint(money){
 function divideMoney(money){
 	var divideNumber = new Array();
 	if(money / 200 > 0){
-		divideNumber[0] = money / 200;
+		divideNumber[0] = parseInt(money / 200);
 		money = money % 200;
 	}
 	if(money / 100 > 0){
-		divideNumber[1] = money / 100;
+		divideNumber[1] = parseInt(money / 100);
 		money = money % 100;
 	}
 	if(money / 50 > 0){
-		divideNumber[2] = money / 50;
+		divideNumber[2] = parseInt(money / 50);
 		money = money % 50;
 	}
 	if(money / 20 > 0){
-		divideNumber[3] = money / 20;
+		divideNumber[3] = parseInt(money / 20);
 		money = money % 20;
 	}
 	if(money / 10 > 0){
-		divideNumber[4] = money / 10;
+		divideNumber[4] = parseInt(money / 10);
 		money = money % 10;
 	}
 	if(money / 5 > 0){
-		divideNumber[5] = money / 5;
+		divideNumber[5] = parseInt(money / 5);
 		money = money % 5;
 	}
 	if(money / 2 > 0){
-		divideNumber[6] = money / 2;
+		divideNumber[6] = parseInt(money / 2);
 		money = money % 2;
 	}
 	if(money / 1 > 0){
-		divideNumber[7] = money / 1;
+		divideNumber[7] = parseInt(money / 1);
 		money = money % 1;
 	}
 
+	return divideNumber;
 }
