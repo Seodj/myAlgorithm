@@ -19,12 +19,17 @@ console.log(entryPoint());
 function entryPoint(){
  	var array = new Array();
 
- 	for(var index = 2 ; index <= 99999 ; index++){
+ 	for(var number = 2 ; number <= 99999 ; number++){
  		var sum = 0;
- 		var temp = index;
- 		if(temp / 10 > 0){
-
+ 		var temp = "" + number;
+ 		for(var index = temp.length - 1 ; index >= 0 ; index--){
+ 			var indexNumber = temp.charAt(index);
+ 			sum +=  indexNumber * indexNumber * indexNumber * indexNumber * indexNumber;
+ 		}
+ 		if(sum == number){
+ 			array.push(number);
  		}
  	}
+ 	
  	return array;
 }
