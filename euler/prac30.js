@@ -19,5 +19,12 @@ console.log(entryPoint());
 function entryPoint(){
  	var array = new Array();
 
+ 	for(var index = 2 ; index <= 99999 ; index++){
+ 		var sum = 0;
+ 		var temp = index;
+ 		if(temp / 10 > 0){
+ 			
+ 		}
+ 	}
  	return array;
 }
