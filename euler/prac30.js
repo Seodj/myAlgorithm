@@ -23,7 +23,7 @@ function entryPoint(){
  		var sum = 0;
  		var temp = index;
  		if(temp / 10 > 0){
- 			
+
  		}
  	}
  	return array;
