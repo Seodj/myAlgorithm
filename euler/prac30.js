@@ -13,6 +13,7 @@
 그렇다면, 각 자리 숫자를 5제곱해서 더했을 때 
 자기 자신이 되는 수들의 합은 얼마입니까?
 */
+
 console.log(entryPoint());
 
 function entryPoint(){
