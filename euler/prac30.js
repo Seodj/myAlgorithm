@@ -17,9 +17,23 @@
 console.log(entryPoint());
 
 function entryPoint(){
- 	var array = new Array();
+ 	return addArray(findFiveJegob());
+}
 
- 	for(var number = 2 ; number <= 99999 ; number++){
+function addArray(array){
+	var sum = 0;
+
+	for(var index = 0; index < array.length ; index++){
+		sum += array[index];
+	}
+
+	return sum;
+}
+
+function findFiveJegob(){
+	var array = new Array();
+
+ 	for(var number = 2 ; number <= 999999 ; number++){
  		var sum = 0;
  		var temp = "" + number;
  		for(var index = temp.length - 1 ; index >= 0 ; index--){
@@ -30,6 +44,6 @@ function entryPoint(){
  			array.push(number);
  		}
  	}
- 	
+
  	return array;
 }
