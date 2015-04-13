@@ -11,5 +11,25 @@
 */
 
 function entryPoint(){
-	
+	var bunjaArray = new Array();
+	var bunmoArray = new Array();
+	for(var bunja = 10; bunja <= 99; bunja++){
+		for(var bunmo = 10; bunmo <=99; bunmo++){
+			if(isFunnyFunction(bunja, bunmo)){
+				console.log(bunja + " " + bunmo);
+			}
+		}
+	}	
+}
+
+function isFunnyFunction(bunja, bunmo){
+	if(bunja / bunmo == bunja.charAt(0) / bunmo.charAt(0)
+		|| bunja / bunmo == bunja.charAt(0) / bunmo.charAt(1)
+		|| bunja / bunmo == bunja.charAt(1) / bunmo.charAt(0)
+		|| bunja / bunmo == bunja.charAt(1) / bunmo.charAt(1)){
+		return true;
+	}
+	else{
+		return false;
+	}
 }
