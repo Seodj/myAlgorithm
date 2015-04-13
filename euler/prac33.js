@@ -15,13 +15,28 @@ console.log(entryPoint());
 function entryPoint(){
 	var bunjaArray = new Array();
 	var bunmoArray = new Array();
+	var bunjagob = 1;
+	var bunmogob = 1;
 	for(var bunja = 10; bunja <= 99; bunja++){
 		for(var bunmo = 10; bunmo <=99; bunmo++){
 			if(isFunnyFunction(bunja, bunmo)){
-				console.log(bunja + " " + bunmo);
+				bunjaArray.push(bunja);
+				bunmoArray.push(bunmo);
 			}
 		}
-	}	
+	}
+
+	for(var index = 0; index < bunjaArray.length ; index++){
+		bunjagob *= bunjaArray[index];
+		bunmogob *= bunmoArray[index];
+	}
+
+	if(bunmogob % bunjagob == 0){
+		return bunmogob / bunjagob;
+	}
+	else{
+		return bunmogob;
+	}
 }
 
 function isFunnyFunction(bunja, bunmo){
@@ -31,10 +46,10 @@ function isFunnyFunction(bunja, bunmo){
 	bunja = "" + bunja;
 	bunmo = "" + bunmo;
 	if(bunja.charAt(1) == bunmo.charAt(0) && bunja / bunmo == bunja.charAt(0) / bunmo.charAt(1)){
-
+		return true;
 	}
 	if(bunja.charAt(0) == bunmo.charAt(1) && bunja / bunmo == bunja.charAt(1) / bunmo.charAt(0)){
-
+		return true;
 	}
 	if(bunja.charAt(0) == bunmo.charAt(0) && bunja / bunmo == bunja.charAt(1) / bunmo.charAt(1)){
 		return true;
