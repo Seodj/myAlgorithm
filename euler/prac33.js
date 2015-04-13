@@ -25,12 +25,18 @@ function entryPoint(){
 }
 
 function isFunnyFunction(bunja, bunmo){
+	if(bunja == bunmo || bunja > bunmo){
+		return false;
+	}
 	bunja = "" + bunja;
 	bunmo = "" + bunmo;
-	if(bunja / bunmo == bunja.charAt(0) / bunmo.charAt(0)
-		|| bunja / bunmo == bunja.charAt(0) / bunmo.charAt(1)
-		|| bunja / bunmo == bunja.charAt(1) / bunmo.charAt(0)
-		|| bunja / bunmo == bunja.charAt(1) / bunmo.charAt(1)){
+	if(bunja.charAt(1) == bunmo.charAt(0) && bunja / bunmo == bunja.charAt(0) / bunmo.charAt(1)){
+
+	}
+	if(bunja.charAt(0) == bunmo.charAt(1) && bunja / bunmo == bunja.charAt(1) / bunmo.charAt(0)){
+
+	}
+	if(bunja.charAt(0) == bunmo.charAt(0) && bunja / bunmo == bunja.charAt(1) / bunmo.charAt(1)){
 		return true;
 	}
 	else{
