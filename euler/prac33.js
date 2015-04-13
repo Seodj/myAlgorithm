@@ -10,6 +10,8 @@
 이 4개의 분수를 곱해서 약분했을 때 분모는 얼마입니까?
 */
 
+console.log(entryPoint());
+
 function entryPoint(){
 	var bunjaArray = new Array();
 	var bunmoArray = new Array();
@@ -23,6 +25,8 @@ function entryPoint(){
 }
 
 function isFunnyFunction(bunja, bunmo){
+	bunja = "" + bunja;
+	bunmo = "" + bunmo;
 	if(bunja / bunmo == bunja.charAt(0) / bunmo.charAt(0)
 		|| bunja / bunmo == bunja.charAt(0) / bunmo.charAt(1)
 		|| bunja / bunmo == bunja.charAt(1) / bunmo.charAt(0)
