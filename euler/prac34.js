@@ -8,5 +8,9 @@
 */
 
 function entryPoint(){
+
+}
+
+function factorial(number){
 	
 }
