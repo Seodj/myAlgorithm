@@ -10,46 +10,99 @@
 2파운드를 만드는 서로 다른 방법은 모두 몇가지나 있습니까?
 */
 
-console.log(divideMoney(300));
+var count = 0;
+console.log(entryPoint(10));
+
+var array = new Array();
 
 function entryPoint(money){
-	
+	divideTwoPound(money);
+	return count;
 }
 
-function divideMoney(money){
-	var divideNumber = new Array();
-	if(money / 200 > 0){
-		divideNumber[0] = parseInt(money / 200);
-		money = money % 200;
+function divideTwoPound(money){
+	if(money == 0 ) {
+		return 0;
 	}
-	if(money / 100 > 0){
-		divideNumber[1] = parseInt(money / 100);
-		money = money % 100;
+	var maxIndex = parseInt(money / 200);
+	for(var index = 0 ; index <= maxIndex ; index++){
+		var sum = index * 200;
+		divideOnePound(money - sum);
 	}
-	if(money / 50 > 0){
-		divideNumber[2] = parseInt(money / 50);
-		money = money % 50;
-	}
-	if(money / 20 > 0){
-		divideNumber[3] = parseInt(money / 20);
-		money = money % 20;
-	}
-	if(money / 10 > 0){
-		divideNumber[4] = parseInt(money / 10);
-		money = money % 10;
-	}
-	if(money / 5 > 0){
-		divideNumber[5] = parseInt(money / 5);
-		money = money % 5;
-	}
-	if(money / 2 > 0){
-		divideNumber[6] = parseInt(money / 2);
-		money = money % 2;
-	}
-	if(money / 1 > 0){
-		divideNumber[7] = parseInt(money / 1);
-		money = money % 1;
-	}
+}
 
-	return divideNumber;
+function divideOnePound(money){
+	if(money == 0 ) {
+		count++;
+		return 0;
+	}
+	var maxIndex = parseInt(money / 100);
+	for(var index = 0 ; index <= maxIndex ; index++){
+		var sum = index * 100;
+		divide50Pence(money - sum);
+	}
+}
+
+function divide50Pence(money){
+	if(money == 0 ) {
+		count++;
+		return 0;
+	}
+	var maxIndex = parseInt(money / 50);
+	for(var index = 0 ; index <= maxIndex ; index++){
+		var sum = index * 50;
+		divide20Pence(money - sum);
+	}
+}
+
+function divide20Pence(money){
+	if(money == 0 ) {
+		count++;
+		return 0;
+	}
+	var maxIndex = parseInt(money / 20);
+	for(var index = 0 ; index <= maxIndex ; index++){
+		var sum = index * 20;
+		divide10Pence(money - sum);
+	}
+}
+
+function divide10Pence(money){
+	if(money == 0 ) {
+		count++;
+		return 0;
+	}
+	var maxIndex = parseInt(money / 10);
+	for(var index = 0 ; index <= maxIndex ; index++){
+		var sum = index * 10;
+		divide5Pence(money - sum);
+	}
+}
+
+function divide5Pence(money){
+	if(money == 0 ) {
+		count++;
+		return 0;
+	}
+	var maxIndex = parseInt(money / 5);
+	for(var index = 0 ; index <= maxIndex ; index++){
+		var sum = index * 5;
+		divide2Pence(money - sum);
+	}
+}
+
+function divide2Pence(money){
+	if(money == 0 ) {
+		count++;
+		return 0;
+	}
+	var maxIndex = parseInt(money / 2);
+	for(var index = 0 ; index <= maxIndex ; index++){
+		var sum = index * 2;
+		divide1Pence(money - sum);
+	}
+}
+
+function divide1Pence(money){
+	count++;
 }
