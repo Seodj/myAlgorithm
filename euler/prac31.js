@@ -11,9 +11,8 @@
 */
 
 var count = 0;
-console.log(entryPoint(10));
+console.log(entryPoint(200));
 
-var array = new Array();
 
 function entryPoint(money){
 	divideTwoPound(money);
