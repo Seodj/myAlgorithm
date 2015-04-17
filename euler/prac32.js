@@ -20,7 +20,7 @@ function entryPoint(){
 		for(var b = 1; b <= 999; b++){
 			var result = a * b;
 			var number = a + "" + b + "" + result;
-			console.log(result;)
+			console.log(result);
 		}
 	}
 }
