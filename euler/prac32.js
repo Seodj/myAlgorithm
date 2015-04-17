@@ -15,16 +15,31 @@ console.log(entryPoint());
 
 function entryPoint(){
 	var sum = 0;
-	for(var a = 1 ; a <= 999; a++){
-		var number = [1,2,3,4,5,6,7,8,9];
-		for(var b = 1; b <= 999; b++){
+	for(var a = 39 ; a <= 39; a++){
+		for(var b = 186; b <= 186; b++){
 			var result = a * b;
 			var number = a + "" + b + "" + result;
-			console.log(result);
+			if(isPandigital(number)){
+				sum += result;
+			}
 		}
 	}
+	return sum;
 }
 
 function isPandigital(number){
-
+	var oneToNine = ['1','2','3','4','5','6','7','8','9'];
+	var isPan = false;
+	for(var index = 0; index < 9; index++){
+		console.log(oneToNine);
+		if(oneToNine.indexOf(number.charAt(index)) >= 0){
+			oneToNine.splice(oneToNine.indexOf(number.charAt(index)),1);
+			isPan = true;
+		} else{
+			return false;
+		}
+	}
+	if(isPan == true){
+		return true;
+	}
 }
