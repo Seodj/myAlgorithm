@@ -15,8 +15,8 @@ console.log(entryPoint());
 
 function entryPoint(){
 	var sum = 0;
-	for(var a = 39 ; a <= 39; a++){
-		for(var b = 186; b <= 186; b++){
+	for(var a = 1 ; a <= 999; a++){
+		for(var b = 1; b <= 999; b++){
 			var result = a * b;
 			var number = a + "" + b + "" + result;
 			if(isPandigital(number)){
