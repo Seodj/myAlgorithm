@@ -11,15 +11,20 @@
 (참고: 어떤 c는 두 개 이상의 (a, b)쌍에 대응될 수도 있는데, 이런 경우는 하나로 칩니다)
 */
 
-function entryPoint(){
-	var number = [1,2,3,4,5,6,7,8,9];
-	for(var a = 1 ; a <= 999){
-		for(var b = 1; b <= 999){
+console.log(entryPoint());
 
+function entryPoint(){
+	var sum = 0;
+	for(var a = 1 ; a <= 999; a++){
+		var number = [1,2,3,4,5,6,7,8,9];
+		for(var b = 1; b <= 999; b++){
+			var result = a * b;
+			var number = a + "" + b + "" + result;
+			console.log(result;)
 		}
 	}
 }
 
 function isPandigital(number){
-	
+
 }
