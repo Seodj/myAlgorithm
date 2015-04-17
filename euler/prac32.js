@@ -14,24 +14,33 @@
 console.log(entryPoint());
 
 function entryPoint(){
+	var pandigitalNumber = new Array();
 	var sum = 0;
-	for(var a = 1 ; a <= 999; a++){
-		for(var b = 1; b <= 999; b++){
+	for(var a = 1 ; a <= 9999; a++){
+		for(var b = 1; b <= 9999; b++){
 			var result = a * b;
 			var number = a + "" + b + "" + result;
 			if(isPandigital(number)){
-				sum += result;
+				if(pandigitalNumber.indexOf(result) < 0){
+					pandigitalNumber.push(result);
+				}
 			}
 		}
+	}
+	for(var index = 0; index < pandigitalNumber.length; index++){
+		sum += pandigitalNumber[index];	
 	}
 	return sum;
 }
 
 function isPandigital(number){
+	var length = "" + number;
+	if(length.length != 9){
+		return false;
+	}
 	var oneToNine = ['1','2','3','4','5','6','7','8','9'];
 	var isPan = false;
 	for(var index = 0; index < 9; index++){
-		console.log(oneToNine);
 		if(oneToNine.indexOf(number.charAt(index)) >= 0){
 			oneToNine.splice(oneToNine.indexOf(number.charAt(index)),1);
 			isPan = true;
