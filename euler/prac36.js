@@ -7,5 +7,9 @@
 */
 
 function entryPoint(){
+
+}
+
+function isPalindrome(){
 	
 }
