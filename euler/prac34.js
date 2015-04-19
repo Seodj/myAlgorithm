@@ -7,6 +7,8 @@
 단, 1! = 1 과 2! = 2 의 경우는 덧셈이 아니므로 제외합니다.
 */
 
+console.log(entryPoint());
+
 function entryPoint(){
 	var sum = 0;
 	for(var number = 1; number <= 9999; number++){
