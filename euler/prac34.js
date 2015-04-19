@@ -8,9 +8,33 @@
 */
 
 function entryPoint(){
+	var sum = 0;
+	for(var number = 1; number <= 9999; number++){
+		if(number == 1 || number == 2){
+			continue;
+		}
+		if(factorial(number)){
+			sum += number;
+		}
+	}
 
+	return sum;
 }
 
 function factorial(number){
-	
+	var number = "" + number;
+	var result = 1;
+	var sum = 0;
+	for(var index = 0; index < number.length; index++){
+		for(var index2 = 1; index2 <= number[index]; index2++){
+			result *= index2;
+		}
+		sum += result;
+	}
+
+	if(sum == number){
+		return true;
+	}
+
+	return false;
 }
