@@ -10,3 +10,7 @@
 function entryPoint(){
 	
 }
+
+function isCircularPrime(){
+	
+}
