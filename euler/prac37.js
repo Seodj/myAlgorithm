@@ -6,3 +6,11 @@
 
 (참고: 2, 3, 5, 7은 제외합니다)
 */
+
+function entryPoint(){
+
+}
+
+function isSosu(){
+	
+}
