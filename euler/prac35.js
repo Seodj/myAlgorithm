@@ -14,3 +14,7 @@ function entryPoint(){
 function isCircularPrime(){
 	
 }
+
+function sunHwan(){
+	
+}
