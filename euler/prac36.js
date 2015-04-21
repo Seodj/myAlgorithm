@@ -6,8 +6,22 @@
 (주의: 첫번째 자리가 0이면 대칭수가 아님)
 */
 
-function entryPoint(){
+console.log(entryPoint(5));
 
+function entryPoint(maxIndex){
+	for(index = 1; index <= maxIndex; index++){
+		var number = index;
+		var binary = new Array();
+		while(number >= 1){
+			if(number == 1){
+				binary.push(number / 2);
+			}
+			binary.push(number % 2);
+			number /= 2;
+		}
+	}
+
+	return binary;
 }
 
 function isPalindrome(){
