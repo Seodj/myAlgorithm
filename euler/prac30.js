@@ -36,6 +36,7 @@ function findFiveJegob(){
  	for(var number = 2 ; number <= 999999 ; number++){
  		var sum = 0;
  		var temp = "" + number;
+ 		
  		for(var index = temp.length - 1 ; index >= 0 ; index--){
  			var indexNumber = temp.charAt(index);
  			sum +=  indexNumber * indexNumber * indexNumber * indexNumber * indexNumber;
