@@ -6,24 +6,36 @@
 (주의: 첫번째 자리가 0이면 대칭수가 아님)
 */
 
-console.log(entryPoint(5));
+console.log(entryPoint(1000000));
 
 function entryPoint(maxIndex){
+	var sum = 0;
 	for(index = 1; index <= maxIndex; index++){
 		var number = index;
 		var binary = new Array();
 		while(number >= 1){
 			if(number == 1){
-				binary.push(number / 2);
+				binary.push(1);
+				if(isPalindrome(binary)){
+					sum += index;
+				}
+				break;
 			}
 			binary.push(number % 2);
-			number /= 2;
+			number = parseInt(number / 2);
 		}
 	}
 
-	return binary;
+	return sum;
 }
 
-function isPalindrome(){
-	
+function isPalindrome(binary){
+	var isPal = true;
+	for(var index = 0; index < binary.length / 2; index++){
+		if(binary[index] != binary[binary.length - 1 - index]){
+			isPal = false;
+		}
+	}
+
+	return isPal;
 }
