@@ -35,11 +35,13 @@ function entryPoint(){
 
 function isPandigital(number){
 	var length = "" + number;
+	var oneToNine = ['1','2','3','4','5','6','7','8','9'];
+	var isPan = false;
+
 	if(length.length != 9){
 		return false;
 	}
-	var oneToNine = ['1','2','3','4','5','6','7','8','9'];
-	var isPan = false;
+	
 	for(var index = 0; index < 9; index++){
 		if(oneToNine.indexOf(number.charAt(index)) >= 0){
 			oneToNine.splice(oneToNine.indexOf(number.charAt(index)),1);
