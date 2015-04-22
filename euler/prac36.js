@@ -6,7 +6,7 @@
 (주의: 첫번째 자리가 0이면 대칭수가 아님)
 */
 
-console.log(entryPoint(1000));
+console.log(entryPoint(1000000));
 
 function entryPoint(maxIndex){
 	var sum = 0;
@@ -16,8 +16,7 @@ function entryPoint(maxIndex){
 		while(number >= 1){
 			if(number == 1){
 				binary.push(1);
-				if(isBinaryPalindrome(binary) && isPalindrome(number)){
-					console.log(binary + " " + number);
+				if(isBinaryPalindrome(binary) && isPalindrome(index)){
 					sum += index;
 				}
 				break;
@@ -42,9 +41,10 @@ function isBinaryPalindrome(binary){
 }
 
 function isPalindrome(number){
+	var number = "" + number;
 	var isPal = true;
 	for(var index = 0; index < number.length / 2; index++){
-		if(number.charAt(index) != number.charAt(binary.length - 1 - index)){
+		if(number.charAt(index) != number.charAt(number.length - 1 - index)){
 			isPal = false;
 		}
 	}
