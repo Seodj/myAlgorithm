@@ -16,8 +16,8 @@ function entryPoint(maxIndex){
 		while(number >= 1){
 			if(number == 1){
 				binary.push(1);
-				if(isPalindrome(binary)){
-					console.log(binary);
+				if(isBinaryPalindrome(binary) && isPalindrome(number)){
+					console.log(binary + " " + number);
 					sum += index;
 				}
 				break;
@@ -30,10 +30,21 @@ function entryPoint(maxIndex){
 	return sum;
 }
 
-function isPalindrome(binary){
+function isBinaryPalindrome(binary){
 	var isPal = true;
 	for(var index = 0; index < binary.length / 2; index++){
 		if(binary[index] != binary[binary.length - 1 - index]){
+			isPal = false;
+		}
+	}
+
+	return isPal;
+}
+
+function isPalindrome(number){
+	var isPal = true;
+	for(var index = 0; index < number.length / 2; index++){
+		if(number.charAt(index) != number.charAt(binary.length - 1 - index)){
 			isPal = false;
 		}
 	}
