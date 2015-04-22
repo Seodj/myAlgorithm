@@ -6,7 +6,7 @@
 (주의: 첫번째 자리가 0이면 대칭수가 아님)
 */
 
-console.log(entryPoint(1000000));
+console.log(entryPoint(1000));
 
 function entryPoint(maxIndex){
 	var sum = 0;
@@ -17,6 +17,7 @@ function entryPoint(maxIndex){
 			if(number == 1){
 				binary.push(1);
 				if(isPalindrome(binary)){
+					console.log(binary);
 					sum += index;
 				}
 				break;
