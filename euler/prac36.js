@@ -10,6 +10,8 @@ console.log(entryPoint(1000000));
 
 function entryPoint(maxIndex){
 	var sum = 0;
+	// 1부터 maxIndex까지 증가하면서 이진수로 변환, 
+	// 10진수와 2진수가 대칭하는지 확인 후, sum에 더해준다.
 	for(index = 1; index <= maxIndex; index++){
 		var number = index;
 		var binary = new Array();
