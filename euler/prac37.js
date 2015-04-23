@@ -7,12 +7,20 @@
 (참고: 2, 3, 5, 7은 제외합니다)
 */
 var divideNumber = new Array();
-var primeNumber = new Array();
-divideNumber.push(2);
-console.log(divideNumber.indexOf(2));
 
 function entryPoint(){
+	for(var index = 0; index < 99999; index++){
+		isPrimeNumber(index);
+	}
 
+	for(var number = 0; number < 99999; number++){
+		var isPrime = true;
+		number = "" + number;
+		for(var index = 0; index < number.length; index++){
+			console.log(number.substring(0, number.length - index));
+			console.log(number.substring(index, number.length));		
+		}
+	}
 }
 
 function isPrimeNumber(value){
@@ -21,13 +29,7 @@ function isPrimeNumber(value){
 			return false;
 		}
 	}
-	// if(divideNumber.inde)
 	divideNumber.push(value);
-	isPrimeDeleteNumber(value);
-	return true;
-}
 
-function isPrimeDeleteNumber(value){
-	value = "" + value;
-	// if(isPrime)
+	return true;
 }
