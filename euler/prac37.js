@@ -7,6 +7,8 @@
 (참고: 2, 3, 5, 7은 제외합니다)
 */
 var divideNumber = new Array();
+divideNumber.push(2);
+var primeNumber = new Array();
 
 function entryPoint(){
 	for(var index = 0; index < 99999; index++){
@@ -17,8 +19,15 @@ function entryPoint(){
 		var isPrime = true;
 		number = "" + number;
 		for(var index = 0; index < number.length; index++){
-			console.log(number.substring(0, number.length - index));
-			console.log(number.substring(index, number.length));		
+			if(divideNumber.indexOf(number.substring(0, number.length - index))
+				&& divideNumber.indexOf(number.substring(index, number.length))){
+
+			} else{
+				isPrime = false;
+			}
+		}
+		if(isPrime){
+			primeNumber.push(number);
 		}
 	}
 }
