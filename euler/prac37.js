@@ -6,11 +6,21 @@
 
 (참고: 2, 3, 5, 7은 제외합니다)
 */
+var divideNumber = new Array();
+divideNumber.push(2);
+
 
 function entryPoint(){
 
 }
 
-function isSosu(){
-	
+function isPrimeNumber(value){
+	value = "" + value;
+	for(var index = 0 ; index < divideNumber.length; index++){
+		if(value % divideNumber[index] == 0){
+			return false;
+		}
+	}
+	divideNumber.push(value);
+	return true;
 }
