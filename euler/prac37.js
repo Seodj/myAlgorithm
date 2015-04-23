@@ -9,7 +9,7 @@
 var divideNumber = new Array();
 var primeNumber = new Array();
 divideNumber.push(2);
-
+console.log(divideNumber.indexOf(2));
 
 function entryPoint(){
 
@@ -21,6 +21,7 @@ function isPrimeNumber(value){
 			return false;
 		}
 	}
+	// if(divideNumber.inde)
 	divideNumber.push(value);
 	isPrimeDeleteNumber(value);
 	return true;
@@ -28,5 +29,5 @@ function isPrimeNumber(value){
 
 function isPrimeDeleteNumber(value){
 	value = "" + value;
-	
+	// if(isPrime)
 }
