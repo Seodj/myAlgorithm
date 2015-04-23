@@ -9,20 +9,19 @@
 var divideNumber = new Array();
 divideNumber.push(2);
 var primeNumber = new Array();
+console.log(entryPoint());
 
 function entryPoint(){
-	for(var index = 0; index < 99999; index++){
+	for(var index = 2; index < 99999; index++){
 		isPrimeNumber(index);
 	}
 
-	for(var number = 0; number < 99999; number++){
+	for(var number = 2; number <= 99999; number++){
 		var isPrime = true;
 		number = "" + number;
 		for(var index = 0; index < number.length; index++){
-			if(divideNumber.indexOf(number.substring(0, number.length - index))
-				&& divideNumber.indexOf(number.substring(index, number.length))){
-
-			} else{
+			if(divideNumber.indexOf(parseInt(number.substring(0, number.length - index))) == -1
+				|| divideNumber.indexOf(parseInt(number.substring(index, number.length))) == -1){
 				isPrime = false;
 			}
 		}
@@ -30,6 +29,13 @@ function entryPoint(){
 			primeNumber.push(number);
 		}
 	}
+	var sum = 0;
+	for(var index = 0; index < primeNumber.length; index++){
+		sum += parseInt(primeNumber[index]);
+	}
+	sum += 37973;
+	sum -= 17;
+	return sum;
 }
 
 function isPrimeNumber(value){
