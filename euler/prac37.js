@@ -37,7 +37,7 @@ function entryPoint(){
 	for(var index = 0; index < primeNumber.length; index++){
 		sum += parseInt(primeNumber[index]);
 	}
-	return primeNumber;
+	return sum;
 }
 
 function isPrimeNumber(value){
