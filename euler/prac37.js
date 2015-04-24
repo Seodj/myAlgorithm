@@ -12,17 +12,21 @@ var primeNumber = new Array();
 console.log(entryPoint());
 
 function entryPoint(){
-	for(var index = 2; index < 99999; index++){
+	for(var index = 2; index < 999999; index++){
 		isPrimeNumber(index);
 	}
 
-	for(var number = 2; number <= 99999; number++){
+	for(var index = 0; index < divideNumber.length; index++){
 		var isPrime = true;
-		number = "" + number;
-		for(var index = 0; index < number.length; index++){
-			if(divideNumber.indexOf(parseInt(number.substring(0, number.length - index))) == -1
-				|| divideNumber.indexOf(parseInt(number.substring(index, number.length))) == -1){
+		var number = "" + divideNumber[index];
+		if(number.length == 1){
+			continue;
+		}
+		for(var index2 = 1; index2 < number.length; index2++){
+			if(divideNumber.indexOf(parseInt(number.substring(0, number.length - index2))) == -1
+				|| divideNumber.indexOf(parseInt(number.substring(index2, number.length))) == -1){
 				isPrime = false;
+				break;
 			}
 		}
 		if(isPrime){
@@ -33,9 +37,7 @@ function entryPoint(){
 	for(var index = 0; index < primeNumber.length; index++){
 		sum += parseInt(primeNumber[index]);
 	}
-	sum += 37973;
-	sum -= 17;
-	return sum;
+	return primeNumber;
 }
 
 function isPrimeNumber(value){
